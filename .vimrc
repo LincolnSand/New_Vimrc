@@ -45,6 +45,7 @@ Plugin 'racer-rust/vim-racer'
 
 
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'dense-analysis/ale'
 
 
 " All of your Plugins must be added before the following line
