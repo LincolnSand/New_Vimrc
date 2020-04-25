@@ -12,14 +12,16 @@ set smarttab
 set expandtab
 set cursorline
 set cursorcolumn
-set number
-set notermguicolors
-set noshowmode
+set number relativenumber
+"set notermguicolors
+"set noshowmode
 set t_Co=256
 set background=dark
 
 set spelllang=en_us
 set spell
+set hlsearch
+set incsearch
 
 hi clear SpellBad
 hi SpellBad cterm=NONE ctermbg=red ctermfg=white
@@ -48,11 +50,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'dense-analysis/ale'
 
 
+" Plugin 'reedes/vim-pencil'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -62,6 +66,17 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
+
+" let g:pencil#wrapModeDefault = 'soft'
+
+" augroup pencil
+"   autocmd!
+"   autocmd FileType markdown,mkd call pencil#init()
+"  
+"   autocmd FileType text         call pencil#init({'wrap': 'hard'})
+" augroup END
+
 
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
